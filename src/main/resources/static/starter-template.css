@@ -1,19 +1,13 @@
 body {
   padding-top: 50px;
+  background-image: url("cherry.jpg");
 }
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
 
-tbody {
-  text-align: left;
+h1 {
+  padding-bottom: 40px;
 }
 
-table {
-  padding: 40px;
-}
-
-.btn-warning {
-  margin-bottom: 40px;
-}
