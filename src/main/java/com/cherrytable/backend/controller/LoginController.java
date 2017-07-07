@@ -33,25 +33,19 @@ public class LoginController {
   }
 
   @PostMapping("/login")
-  public ResponseEntity<ResponseType> loginOrganisation (@RequestBody @Valid OrgLoginInputDto orgLoginInputDto,
-                                                    BindingResult bindingResult){
-
-    System.out.println(orgLoginInputDto.getPassword());
-    System.out.println(orgLoginInputDto.getOrganisationLogin());
-
+  public ResponseEntity<ResponseType> loginOrganisation (
+      @RequestBody @Valid OrgLoginInputDto orgLoginInputDto,
+      BindingResult bindingResult) {
     if (bindingResult.hasErrors()){
       return ResponseEntity.badRequest().body(statusService.responseToMissingParameters(bindingResult));
     }
-
     if (!organisationService.doesOrganisationExistInDB(orgLoginInputDto.getOrganisationLogin())){
       return ResponseEntity.status(401).body(statusService.responseToIncorrectOrgLogin());
     }
-
     if (!organisationService.isPasswordCorrect(orgLoginInputDto.getOrganisationLogin(),
             orgLoginInputDto.getPassword())){
       return ResponseEntity.status(401).body(statusService.responseToIncorrectPassword());
     }
-
     String savedToken = tokenService.saveNewTokenToOrg(orgLoginInputDto.getOrganisationLogin());
     return ResponseEntity.ok().body(new LoginResponse(savedToken, orgLoginInputDto.getOrganisationLogin()));
   }

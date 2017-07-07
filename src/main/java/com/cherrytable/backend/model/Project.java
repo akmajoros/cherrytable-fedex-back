@@ -10,6 +10,7 @@ public class Project {
 
   @Id
   @NotNull
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private long id;
   @NotNull
