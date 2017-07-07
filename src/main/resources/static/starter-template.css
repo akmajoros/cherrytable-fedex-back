@@ -1,13 +1,18 @@
 body {
+  font-weight: bold;
+  color: white;
   padding-top: 50px;
   background-image: url("cherry.jpg");
 }
 .starter-template {
-  padding: 40px 15px;
-  text-align: center;
+  padding: 40px 80px;
+  text-align: left;
 }
 
 h1 {
+  font-style: oblique;
+  padding-top: 100px;
+  padding-left: 240px;
   padding-bottom: 40px;
 }
 
