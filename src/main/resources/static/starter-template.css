@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+tbody {
+  text-align: left;
+}
+
+table {
+  padding: 40px;
+}
+
+.btn-warning {
+  margin-bottom: 40px;
+}
